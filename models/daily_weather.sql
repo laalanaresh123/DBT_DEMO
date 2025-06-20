@@ -22,4 +22,4 @@ daily_weather_aggr as (
     from daily_weather group by daily_weather, weather
     qualify row_number() over(partition by daily_weather order by count(weather) desc) = 1
 )
-select * from daily_weather_aggr
+select * from daily_weather_aggr 
